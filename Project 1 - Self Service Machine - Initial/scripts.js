@@ -64,13 +64,14 @@ var products = [
     }
 ];
 
-const SelServiceMachine = {
+const SelfServiceMachine = {
     data() {
         return {
-            message: "Hello World"
+           products: window.products
         }
     }
 }
 
-Vue.createApp(SelServiceMachine).mount('#app');
+Vue.createApp(SelfServiceMachine).mount('#app');
 
+ 
