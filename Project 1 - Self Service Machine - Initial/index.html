@@ -18,7 +18,12 @@
         <section class="items">
             <h4>Pick Your Items</h4>
 
-            <div v-for="product in products" class="product">
+            <div 
+            v-for="product in products" 
+            class="product"
+            @click="product.active = !product.active"
+            :class="{ selected : product.active }" 
+            >
                 <div class="photo">
                     <img :src= "product.photo">
                 </div>
@@ -35,7 +40,7 @@
         </section>
 
         <section class="summary">
-            <strong>Resumo do pedido</strong>
+            <strong>Order Details</strong>
             <table>
                 <thead>
                     <tr>
