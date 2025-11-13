@@ -20,8 +20,14 @@ const handlingForms = {
         }
     },
     methods: {
-        addMember: function() {
-            this.members.push(this.newMember)
+        addMember: function () {
+            if (this.newMember.fname && this.newMember.lname && this.newMember.instrument) {
+                this.members.push(this.newMember)
+                this.newMember = {}
+
+            } else {
+                alert("All field must be filled!")
+            }
         }
     }
 
