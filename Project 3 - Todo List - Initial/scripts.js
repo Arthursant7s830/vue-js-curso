@@ -1,5 +1,5 @@
 var todos = [
-  
+
 ]
 
 const todoApp = {
@@ -8,7 +8,7 @@ const todoApp = {
             todo: window.todos,
             newTodo: {
                 done: false
-            } 
+            }
         }
     },
     methods: {
@@ -18,12 +18,13 @@ const todoApp = {
                 this.todo.push(this.newTodo)
                 this.newTodo = {
                     done: false
-                }
+                };
+                window.localStorage.setItem("todos", JSON.stringify(this.todo));
             } else {
-                alert("To-do text is required!")
+                alert("To-do text is required!");
             }
         }
     }
 }
 
-Vue.createApp(todoApp).mount('#app')
+Vue.createApp(todoApp).mount('#app');
