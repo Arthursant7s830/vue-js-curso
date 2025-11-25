@@ -18,18 +18,18 @@
             <section class="todo-list">
                 
                 
-                <h3>Lista de Tarefas</h3>
+                <h3>To-do List</h3>
                 
                 <div class="all-todos">
-                    <div v-for="todos in todo" class="single-todo done" :class="{done : todo.done}">
+                    <div v-for="todos in todo" class="single-todo" :class="{done : todos.done}">
                         <p>{{ todos.text }}</p>
                     </div>
                 </div>
 
-                <button class="clear">Limpar tudo</button>
+                <button class="clear">Clear</button>
 
-                <input type="text" placeholder="Escreva uma nova tarefa...">
-                <button class="add">Adicionar</button>
+                <input type="text" placeholder="Escreva uma nova tarefa..." v-model="newTodo.text">
+                <button class="add" @click="addTodo()" >Add</button>
 
                 <div class="instructions">
                     Instruções:
