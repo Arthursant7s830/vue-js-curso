@@ -24,6 +24,12 @@ const todoApp = {
                 alert("To-do text is required!");
             }
         }
+    },
+    beforeCreate() {
+        console.log(this.newTodo)
+    },
+   Created() {
+        console.log(this.newTodo)
     }
 }
 
