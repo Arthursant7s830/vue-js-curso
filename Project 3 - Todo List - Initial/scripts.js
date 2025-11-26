@@ -25,11 +25,8 @@ const todoApp = {
             }
         }
     },
-    beforeCreate() {
-        console.log(this.newTodo)
-    },
-   Created() {
-        console.log(this.newTodo)
+    created() {
+        this.todo = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : this.todo;
     }
 }
 
